@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:cotext="com.xfsi.swipe_demo1/ParseActivity">
+
+    <item android:title="New" app:showAsAction="ifRoom|withText"
+        android:id="@+id/newObject"/>
+    <item android:title="Update" app:showAsAction="ifRoom|withText"
+        android:id="@+id/update" />
+    <item android:title="Search" app:showAsAction="ifRoom|withText"
+        android:id="@+id/search" />
+    <item android:title="Address" app:showAsAction="never"
+        android:id="@+id/address" />
+</menu>

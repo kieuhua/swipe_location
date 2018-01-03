@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xfsi.swipe_demo1">
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.BIND_CHOOSER_TARGET_SERVICE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBDffo3m1dFsFjeVXo8DbRP1QIgxxLR8Wk" />
+
+
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".contents.SnackbarActivity"
+            android:label="SnackBar" >
+        </activity>
+        <activity android:name=".ParseActivity"
+            android:label="Parse">
+        </activity>
+        <service android:name=".FetchAddressIntentService"
+            android:exported="false"/>
+
+        <activity android:name=".contents.ContentsActivity"
+            android:label="Contents Provider">
+        </activity>
+        <activity android:name=".contents.CloudActivity"
+            android:label="Cloud Provider">
+        </activity>
+
+        <!--BEGIN_INCLUDE(provider_manifest)-->
+        <!--
+        Declare the document provider class MyCloudProvider to the system.  The MANAGE_DOCUMENTS
+        permission belongs only to the Android system, ensuring this provider will never be used
+        directly by another app.  The provider must grant URI permissions in order to expose the
+        specific documents(s) chosen, while not sharing all of its data by default.  It must be
+        exported to be visible outside the application, and it must include a filter with the intent
+        "android.content.action.DOCUMENTS_PROVIDER" in order to be shown in the system document
+        picker UI.
+        -->
+        <provider
+            android:authorities="com.xfsi.swipe_demo1.documents"
+            android:name="com.xfsi.swipe_demo1.contents.MyCloudProvider"
+            android:grantUriPermissions="true"
+            android:exported="true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+
+            <intent-filter>
+                <action android:name="android.content.action.DOCUMENTS_PROVIDER"/>
+            </intent-filter>
+        </provider>
+        <!--END_INCLUDE(provider_manifest)-->
+
+        <!-- 3 DirectShare -->
+        <activity android:name=".contents.DirectShareActivity"
+            android:label="Direct Share">
+        </activity>
+        <activity android:name=".contents.SendMessageActivity"
+            android:label="Swipe_Demo1 Send Message">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <meta-data android:name="android.service.chooser.ChooserTargetService"
+                android:value=".MyChooserTargetService" />
+        </activity>
+        <activity android:name=".contents.SelectContactActivity"
+            android:label="Select Contact" android:theme="@style/DirectShareDialogTheme">
+        </activity>
+
+        <service android:name=".contents.MyChooserTargetService"
+            android:label="MyChooser Target Service"
+            android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.chooser.ChooserTargetService" />
+            </intent-filter>
+        </service>
+
+        <!-- 4 PermissionRequest -->
+        <activity android:name=".contents.PermissionRequestActivity"
+            android:label="PermissionRequest">
+        </activity>
+
+    </application>
+</manifest>

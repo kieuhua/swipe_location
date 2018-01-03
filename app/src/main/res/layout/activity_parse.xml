@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:id="@+id/parse_content">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/parse_main">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:id="@+id/toolbar">
+
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/greenPeace"
+            android:orientation="vertical">
+
+            <fragment
+                android:name="com.xfsi.swipe_demo1.ParseFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/parse_fragment" />
+        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_menu_compass"
+        android:id="@+id/fab_location" />
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.xfsi.swipe_demo1.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item android:id="@+id/menu_toggle_log"
+        app:showAsAction="always"
+        android:title="@string/sample_show_log" />
+    <item android:id="@+id/contents_provider"
+        app:showAsAction="ifRoom|withText"
+        android:title="Contents" />
+    <item android:id="@+id/sample_snackbar"
+        app:showAsAction="never"
+        android:title="Snackbar" />
+    <item android:id="@+id/location"
+        app:showAsAction="never"
+        android:title="Location" />
+    <item android:id="@+id/parse_activity"
+        app:showAsAction="never"
+        android:title="ParseCOM" />
+</menu>

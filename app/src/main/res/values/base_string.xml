@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="intro_message2">
+        [<![CDATA[
+
+
+            \nA simple implementation of a documents provider using the storage access framework
+            in Android 4.4.
+        ]]>
+    </string>
+</resources>

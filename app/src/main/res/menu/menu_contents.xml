@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="client" android:id="@+id/client"/>
+    <item android:title="cloud" android:id="@+id/cloud" />
+    <item android:title="directshare" android:id="@+id/directshare" />
+    <item android:title="permissionrequest" android:id="@+id/permissionrequest" />
+</menu>

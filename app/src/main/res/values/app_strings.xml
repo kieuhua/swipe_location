@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_in">Log in</string>
+    <string name="log_out">Log out</string>
+    <string name="logged_in_info">Cloud Logged in</string>
+    <string name="logged_out_info">Cloud Logged out</string>
+    <string name="root_summary">cloudy with a chance of &#8230;</string>
+    <string name="key_logged_in">logged_in</string>
+</resources>
